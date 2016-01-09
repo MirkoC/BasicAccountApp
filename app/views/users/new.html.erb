@@ -1,10 +1,33 @@
-Register
-
-<%= form_for @user, url: users_path, method: :post do |f| %>
-    <%= f.text_field        :username,              class: 'form-control', placeholder: 'Username' %>
-    <%= f.text_field        :email,                 class: 'form-control', placeholder: 'Email' %>
-    <%= f.password_field    :password,              class: 'form-control', placeholder: 'Password' %>
-    <%= f.password_field    :password_confirmation, class: 'form-control', placeholder: 'Confirm password' %>
-    <%= f.text_field        :full_name,             class: 'form-control', placeholder: 'Full name' %>
-    <%= f.submit 'Register' %>
-<% end %>
+<div class="col-sm-6">
+  <%= form_for @user, url: users_path, method: :post do |f| %>
+      <h4>Create Account</h4>
+      <% if @user.errors.any? %>
+          <div class="alert alert-danger">
+            <b><%= pluralize(@user.errors.count, 'error') %> prohibited this user from being saved:</b>
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+      <div class="form-group">
+        <%= f.text_field :username, class: 'form-control', placeholder: 'Username' %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm password' %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :full_name, class: 'form-control', placeholder: 'Full name' %>
+      </div>
+      <div class="actions">
+        <%= f.submit 'Register', class: 'btn btn-primary' %>
+      </div>
+  <% end %>
+</div>

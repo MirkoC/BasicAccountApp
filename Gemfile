@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# bootstrap
+gem 'bootstrap', '~> 4.0.0.alpha3'
 # authlogic
 gem 'authlogic'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

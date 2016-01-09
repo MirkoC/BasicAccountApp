@@ -1,0 +1,8 @@
+Login
+
+
+<%= form_for @user, url: user_sessions_path, method: :post do |f| %>
+    <%= f.text_field :username, class: 'form-control', placeholder: 'Username or email' %>
+    <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+    <%= f.submit 'Login' %>
+<% end %>

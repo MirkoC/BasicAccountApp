@@ -3,8 +3,9 @@
     <i class="fa fa-user"> <%= current_user.full_name %> </i><span class="caret"></span>
   </a>
   <ul class="dropdown-menu">
-    <li><a href="#"><i class="fa fa-paperclip"> My data </i></a></li>
-    <li><a href="#"><i class="fa fa-pencil-square-o"> Edit data  </i></a></li>
+    <li>
+      <%=link_to ' My data ', user_path(current_user), class: 'fa fa-paperclip' %>
+    </li>
     <li role="separator" class="divider"></li>
     <li>
       <%=link_to ' Log out ', user_session_path(current_user_session), 'data-method' => :delete, class: 'fa fa-sign-out' %>

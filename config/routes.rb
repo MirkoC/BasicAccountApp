@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # user registration controller
-  resources :users, only: :create
+  resources :users, only: [:create, :show]
   get 'register' => 'users#new'
   get 'welcome' => 'home#registration_successful'
 

@@ -5,13 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <br/>
-  <!-- TODO: add header and remove br tag -->
 </head>
 <body>
-    <div class="col-sm-2">
+    <%= render 'layouts/top_navigation_bar' %>
+    <div class="col-sm-1">
     </div>
-    <div class="col-sm-10">
+    <div class="col-sm-11">
       <%= yield %>
     </div>
 </body>

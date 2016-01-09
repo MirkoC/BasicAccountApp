@@ -16,4 +16,14 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  def update
+    @user = current_user
+    respond_to do |format|
+      if @user.update_attributes(user_params)
+        format.json { head :no_content }
+      end
+    end
+  end
+
 end

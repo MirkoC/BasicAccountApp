@@ -42,6 +42,9 @@ GEM
       activesupport (>= 3.2)
       request_store (~> 1.0)
       scrypt (>= 1.2, < 3.0)
+    best_in_place (3.0.3)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -161,6 +164,7 @@ PLATFORMS
 
 DEPENDENCIES
   authlogic
+  best_in_place (~> 3.0.1)
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)

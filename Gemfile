@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# best-in-place
+gem 'best_in_place', '~> 3.0.1'
 # bootstrap
 gem 'twitter-bootstrap-rails'
 # authlogic

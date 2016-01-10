@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# puma server
+gem 'puma'
 # sidekiq
 gem 'sidekiq'
 gem 'sidekiq-failures'

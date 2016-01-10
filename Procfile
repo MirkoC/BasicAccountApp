@@ -1,2 +1,2 @@
-web: bundle exec rails server
+web: bundle exec puma
 sidekiq: bundle exec sidekiq

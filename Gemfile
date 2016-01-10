@@ -6,7 +6,6 @@ gem 'rails_12factor', group: :production
 gem 'puma'
 # sidekiq job system
 gem 'sidekiq'
-gem 'sidekiq-throttled'
 gem 'sidekiq-failures'
 gem 'sinatra'
 # postmarkapp

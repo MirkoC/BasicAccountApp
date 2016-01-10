@@ -22,7 +22,8 @@
       </div>
       <div class="actions">
         <%= f.check_box :remember_me, class: 'checkbox pull-left' %><%= f.label :remember_me, class: 'label label-primary' %>
-        <%= f.submit 'Login', class: 'btn btn-primary pull-right'  %>
+        <%= f.submit 'Login', class: 'btn btn-primary pull-right' %>
+        <%= link_to 'Register account', register_path, class: 'btn btn-link pull-right' %>
       </div>
   <% end %>
 </div>

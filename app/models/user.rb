@@ -6,7 +6,16 @@ class User < ActiveRecord::Base
   end
 
   def deliver_welcome_email!
-    reset_perishable_token!
     SendWelcomeEmailJob.perform_later(self.id)
+  end
+
+  def deliver_verification_instructions!
+    reset_perishable_token!
+    SendVerificationInstructionsJob.perform_later(self.id)
+  end
+
+  def verify!
+    self.verified = true
+    self.save
   end
 end

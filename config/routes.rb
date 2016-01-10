@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :show, :update]
   get 'register' => 'users#new'
   get 'welcome' => 'home#registration_successful'
+  get 'verify' => 'user_verifications#update'
 
   # user_sessions controller
   resources :user_sessions, only: [:create, :destroy]

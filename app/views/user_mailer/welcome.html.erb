@@ -1,0 +1,7 @@
+<% display_name = @user.full_name %>
+<% display_name = @user.username if @user.full_name == '' %>
+
+<h2>Dear <%= display_name %>!!!</h2>
+<p>
+  Thank you for signing up for BasicAuthApp. Enjoy!!!
+</p>

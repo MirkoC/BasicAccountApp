@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+# sidekiq
+gem 'sidekiq'
+gem 'sidekiq-failures'
+gem 'sinatra'
+# postmarkapp
+gem 'postmark-rails'
 # best-in-place
 gem 'best_in_place', '~> 3.0.1'
 # bootstrap

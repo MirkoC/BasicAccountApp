@@ -4,8 +4,9 @@ source 'https://rubygems.org'
 gem 'rails_12factor', group: :production
 # puma server
 gem 'puma'
-# sidekiq
+# sidekiq job system
 gem 'sidekiq'
+gem 'sidekiq-throttled'
 gem 'sidekiq-failures'
 gem 'sinatra'
 # postmarkapp

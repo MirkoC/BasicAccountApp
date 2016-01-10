@@ -1,6 +1,8 @@
+<% display_name = current_user.full_name %>
+<% display_name = current_user.username if current_user.full_name == '' %>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-    <i class="fa fa-user"> <%= current_user.full_name %> </i><span class="caret"></span>
+    <i class="fa fa-user"> <%= display_name  %> </i><span class="caret"></span>
   </a>
   <ul class="dropdown-menu">
     <li>

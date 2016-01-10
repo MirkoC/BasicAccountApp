@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# heroku
+gem 'rails_12factor', group: :production
 # puma server
 gem 'puma'
 # sidekiq
@@ -58,3 +60,4 @@ group :development do
   gem 'spring'
 end
 
+ruby '2.2.2'

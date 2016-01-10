@@ -21,7 +21,9 @@ class UsersController < ApplicationController
     @user = current_user
     respond_to do |format|
       if @user.update_attributes(user_params)
-        format.json { head :no_content }
+        format.json { respond_with_bip(@user) }
+      else
+        format.json { respond_with_bip(@user) }
       end
     end
   end

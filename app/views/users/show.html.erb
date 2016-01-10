@@ -1,20 +1,18 @@
-<ul>
-  <li>
-    <%= label_tag :username, 'Username' %>
-  </li>
-  <li>
-    <%= best_in_place @user, :username, :as => :input%>
-  </li>
-  <li>
-    <%= label_tag :email, 'Full name:' %>
-  </li>
-  <li>
-    <%= best_in_place @user, :email, :as => :input%>
-  </li>
-  <li>
-    <%= label_tag :full_name, 'Full name:' %>
-  </li>
-  <li>
-    <%= best_in_place @user, :full_name, :as => :input%>
-  </li>
-</ul>
+<div class="col-sm-4">
+  <table class="table table-hover">
+    <tr>
+      <th>Username</th>
+      <td><%= best_in_place @user, :username, as: :input, class: 'hvr-underline-from-center'%></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= best_in_place @user, :email, as: :input, class: 'hvr-underline-from-center'%></td>
+    </tr>
+    <tr>
+      <th>Full name</th>
+      <td><%= best_in_place_if @user.full_name, @user, :full_name, as: :input, class: 'hvr-underline-from-center'%></td>
+    </tr>
+  </table>
+</div>
+
+

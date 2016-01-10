@@ -1,12 +1,19 @@
 <div class="col-sm-6">
-  <%= form_for @user, url: user_sessions_path, method: :post do |f| %>
-      <h4>Login</h4>
-      <% if flash[:error] %>
-          <div class="alert alert-danger"><%= flash[:error]%></div>
+  <%= form_for @user_session, url: user_sessions_path, method: :post do |f| %>
+      <% if @user_session.errors.any? %>
+          <div class="alert alert-danger">
+            <b><%= pluralize(@user_session.errors.count, 'error') %> prohibited this user from being saved:</b>
+            <ul>
+              <% @user_session.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
       <% end %>
       <% if flash[:notice] %>
           <div class="alert alert-info"><%= flash[:notice]%></div>
       <% end %>
+      <h4>Login</h4>
       <div class="form-group">
         <%= f.text_field :username, class: 'form-control', placeholder: 'Username or email' %>
       </div>

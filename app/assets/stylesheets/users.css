@@ -1,0 +1,9 @@
+.purr {
+    position: fixed;
+    top: 30px;
+    left: 550px;
+    width: 250px;
+    padding: 20px;
+    background-color: #FCC;
+    border: solid 1px #C66;
+}

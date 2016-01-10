@@ -21,7 +21,8 @@
         <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
       </div>
       <div class="actions">
-        <%= f.submit 'Login', class: 'btn btn-primary'  %>
+        <%= f.check_box :remember_me, class: 'checkbox pull-left' %><%= f.label :remember_me, class: 'label label-primary' %>
+        <%= f.submit 'Login', class: 'btn btn-primary pull-right'  %>
       </div>
   <% end %>
 </div>

@@ -52,9 +52,7 @@ class UsersController < ApplicationController
     'Successfully updated password.'
   end
   def change_password_error
-    if params[:user][:password] != params[:user][:password_confirmation]
-      'New passwords don\'t match.'
-    elsif !@user.valid_password? params[:user][:current_password]
+    if !@user.valid_password? params[:user][:current_password]
       'Current password not valid.'
     end
   end

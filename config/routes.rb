@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # user registration controller
-  resources :users, only: [:create, :show, :update]
+  resources :users, only: [:create, :show, :update, :edit]
   get 'register' => 'users#new'
+  put 'change_password' => 'users#change_password'
   get 'welcome' => 'home#registration_successful'
   get 'verify' => 'user_verifications#update'
 

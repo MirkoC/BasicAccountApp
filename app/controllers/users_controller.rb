@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+  end
+
   def update
     @user = current_user
     respond_to do |format|
@@ -30,4 +34,28 @@ class UsersController < ApplicationController
     end
   end
 
+  def change_password
+    @user = current_user
+      if @user.valid_password?(params[:user][:current_password]) && @user.update_attributes(user_params)
+        UserSession.create(username: @user.username, password: params[:user][:password])
+        flash[:notice] = change_password_notice
+        redirect_to user_path(@user)
+      else
+        flash[:error] = change_password_error
+        render :edit
+      end
+  end
+
+  private
+
+  def change_password_notice
+    'Successfully updated password.'
+  end
+  def change_password_error
+    if params[:user][:password] != params[:user][:password_confirmation]
+      'New passwords don\'t match.'
+    elsif !@user.valid_password? params[:user][:current_password]
+      'Current password not valid.'
+    end
+  end
 end

@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['FROM_EMAIL']
+  default from: 'mirko@floatingpoint.io'
   layout 'mailer'
 end

@@ -19,6 +19,8 @@
       <td><%= best_in_place_if @user.full_name, @user, :full_name, as: :input, class: 'hvr-underline-from-center'%></td>
     </tr>
   </table>
+
+  <%= link_to 'Change password', edit_user_path(@user), class: 'btn btn-info btn-sm' %>
 </div>
 
 

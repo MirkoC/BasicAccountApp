@@ -34,7 +34,7 @@ module Pbs
 
     # postmarkapp
     config.action_mailer.delivery_method = :postmark
-    config.action_mailer.postmark_settings = { api_token: ENV['POSTMARKAPP_KEY'] }
+    config.action_mailer.postmark_settings = { api_token: 'b30d782a-3ad0-4d46-857a-09f805fad7be' }
 
     # sidekiq
     config.active_job.queue_adapter = :sidekiq

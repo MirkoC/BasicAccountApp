@@ -1,3 +1,5 @@
+//= require jquery-ui
+
 (function($) {
 
     $(document).ready(function() {
@@ -7,7 +9,7 @@
 
     $(document).bind("ajax:success", function (data, status, xhr) {
         console.log(data.target.id);
-        // TODO: add effect after successful update
+        $("#"+data.target.id).effect( "highlight", {color:"#c9eb86"}, 3000 );
     });
 
 })(jQuery);

@@ -28,12 +28,20 @@ class PasswordResetsController < ApplicationController
       flash[:notice] = 'Your password was successfully updated!'
       redirect_to login_path
     else
-      flash[:error] = 'Passwords don\'t match!'
+      flash[:error] = reset_password_error_message
       redirect_to edit_password_reset_url(@user.perishable_token)
     end
   end
 
   private
+
+  def reset_password_error_message
+    message ||= ''
+    @user.errors.full_messages.each do |msg|
+      message += "#{msg} "
+    end
+    message
+  end
 
   def email_username_error_message
     if is_email(params[:email])

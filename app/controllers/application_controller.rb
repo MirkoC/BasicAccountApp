@@ -28,6 +28,9 @@ class ApplicationController < ActionController::Base
 
   def load_user_using_perishable_token
     @user = User.find_using_perishable_token(params[:format] || params[:id])
-    flash[:notice] = 'Unable to find your account.' unless @user
+    unless @user
+      flash[:notice] = 'Unable to find your account.'
+      redirect_to login_path
+    end
   end
 end

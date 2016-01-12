@@ -1,11 +1,11 @@
-<div class="col-sm-4">
+<div class="col-sm-4 center-block text-center">
   <%= form_tag password_resets_path do %>
       <h4>Reset Password</h4>
       <div class="form-group">
         <%= text_field_tag :email, '', maxlength: '', size: '', class: 'form-control', placeholder: 'Email or username' %>
       </div>
       <div class="actions">
-        <%= submit_tag 'Reset Password', class: 'btn btn-primary' %>
+        <%= submit_tag 'Reset Password', class: 'btn btn-primary btn-sm pull-left' %>
       </div>
   <% end %>
 </div>

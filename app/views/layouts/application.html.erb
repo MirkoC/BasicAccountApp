@@ -7,18 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <%= render 'layouts/top_navigation_bar' %>
-    <div class="container-fluid col-sm-12">
-      <div class="row">
-        <div class="col-sm-4">
-          <% flash.each do |type, message| %>
-              <div class="alert <%= bootstrap_class_for(type) %>" id="flash">
-                <%= message %>
-              </div>
-          <% end %>
+<%= render 'layouts/top_navigation_bar' %>
+<div class="row">
+  <div class="col-sm-4 text-center center-block">
+    <% flash.each do |type, message| %>
+        <div class="alert <%= bootstrap_class_for(type) %>" id="flash">
+          <%= message %>
         </div>
-      </div>
-      <%= yield %>
-    </div>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <%= yield %>
+</div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<div class="col-sm-6">
+<div class="col-sm-6 center-block text-center">
   <%= form_tag password_reset_path, :method => :put do %>
       <h4>Update your password</h4>
       <div class="form-group">
@@ -8,7 +8,7 @@
         <%= password_field_tag :password_confirmation, '', maxlength: '', size: '', class: 'form-control', placeholder: 'Confirm new password' %>
       </div>
       <div class="actions">
-        <%= submit_tag 'Update Password', class: 'btn btn-primary' %>
+        <%= submit_tag 'Update Password', class: 'btn btn-primary btn-sm pull-left' %>
       </div>
   <% end %>
 </div>

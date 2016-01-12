@@ -1,4 +1,4 @@
-<div class="col-sm-6">
+<div class="col-sm-3 center-block text-center">
   <%= form_for @user, url: {controller: 'users', action: 'change_password'}, method: :put do |f| %>
       <% if @user.errors.any? %>
           <div class="alert alert-danger">
@@ -21,7 +21,7 @@
         <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm new password' %>
       </div>
       <div class="actions">
-        <%= f.submit 'Change', class: 'btn btn-primary' %>
+        <%= f.submit 'Change', class: 'btn btn-primary btn-sm pull-left' %>
       </div>
   <% end %>
 </div>

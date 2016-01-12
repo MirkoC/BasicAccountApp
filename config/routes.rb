@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :user_sessions, only: [:create, :destroy]
   get 'login' => 'user_sessions#new'
 
+  resources :password_resets, only: [ :new, :create, :edit, :update ]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

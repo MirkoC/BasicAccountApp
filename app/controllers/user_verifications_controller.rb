@@ -6,11 +6,4 @@ class UserVerificationsController < ApplicationController
     flash[:notice] = 'Thank you for verifying your account. You may now login.'
     redirect_to login_path
   end
-
-  private
-
-  def load_user_using_perishable_token
-    @user = User.find_using_perishable_token(params[:format])
-    flash[:notice] = 'Unable to find your account.' unless @user
-  end
 end

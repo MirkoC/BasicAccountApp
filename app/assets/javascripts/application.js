@@ -19,3 +19,6 @@
 //= require turbolinks
 //= require_tree .
 
+$( document ).ready(function() {
+    $('#flash').hide().delay(200).fadeIn(800).delay(4000).fadeOut(800);
+});

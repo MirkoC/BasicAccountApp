@@ -1,11 +1,5 @@
 <div class="col-sm-4">
   <%= form_tag password_resets_path do %>
-      <% if flash[:error] %>
-          <div class="alert alert-danger"><%= flash[:error]%></div>
-      <% end %>
-      <% if flash[:notice] %>
-          <div class="alert alert-info"><%= flash[:notice]%></div>
-      <% end %>
       <h4>Reset Password</h4>
       <div class="form-group">
         <%= text_field_tag :email, '', maxlength: '', size: '', class: 'form-control', placeholder: 'Email or username' %>

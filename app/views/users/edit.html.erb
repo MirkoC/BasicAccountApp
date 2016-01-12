@@ -1,11 +1,5 @@
 <div class="col-sm-6">
   <%= form_for @user, url: {controller: 'users', action: 'change_password'}, method: :put do |f| %>
-      <% if flash[:notice] %>
-          <div class="alert alert-info"><%= flash[:notice]%></div>
-      <% end %>
-      <% if flash[:error] %>
-          <div class="alert alert-danger"><%= flash[:error]%></div>
-      <% end %>
       <% if @user.errors.any? %>
           <div class="alert alert-danger">
             <b><%= pluralize(@user.errors.count, 'error') %> prohibited this user from being saved:</b>

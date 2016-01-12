@@ -10,9 +10,6 @@
             </ul>
           </div>
       <% end %>
-      <% if flash[:notice] %>
-          <div class="alert alert-info"><%= flash[:notice]%></div>
-      <% end %>
       <h4>Login</h4>
       <div class="form-group">
         <%= f.text_field :username, class: 'form-control', placeholder: 'Username or email' %>

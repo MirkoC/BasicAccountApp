@@ -8,9 +8,16 @@
 </head>
 <body>
     <%= render 'layouts/top_navigation_bar' %>
-    <div class="col-sm-1">
-    </div>
-    <div class="col-sm-11">
+    <div class="container-fluid col-sm-12">
+      <div class="row">
+        <div class="col-sm-4">
+          <% flash.each do |type, message| %>
+              <div class="alert <%= bootstrap_class_for(type) %>" id="flash">
+                <%= message %>
+              </div>
+          <% end %>
+        </div>
+      </div>
       <%= yield %>
     </div>
 </body>

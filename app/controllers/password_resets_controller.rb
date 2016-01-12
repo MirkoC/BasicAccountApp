@@ -12,7 +12,7 @@ class PasswordResetsController < ApplicationController
       flash[:notice] = 'Instructions to reset your password had been emailed to you.'
       redirect_to login_path
     else
-      flash.now[:error] = "No user was found with email address #{params[:email]}"
+      flash.now[:error] = email_username_error_message
       render :new
     end
   end
@@ -31,5 +31,19 @@ class PasswordResetsController < ApplicationController
       flash[:error] = 'Passwords don\'t match!'
       redirect_to edit_password_reset_url(@user.perishable_token)
     end
+  end
+
+  private
+
+  def email_username_error_message
+    if is_email(params[:email])
+      "No user was found with email address #{params[:email]} !"
+    else
+      "No user was found with username #{params[:email]} !"
+    end
+  end
+
+  def is_email(str)
+    return str.match(/[a-zA-Z0-9._%]@(?:[a-zA-Z0-9]\.)[a-zA-Z]{2,4}/)
   end
 end

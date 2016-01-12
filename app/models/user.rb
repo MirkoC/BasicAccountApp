@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
-  acts_as_authentic
+  acts_as_authentic do |c|
+    # AuthLogic ignores blank password and password confirmation
+    # by default if record exists, change password wouldn't work without this
+    c.ignore_blank_passwords = false
+  end
   attr_accessor :current_password
 
   def self.find_by_username_or_email(login)

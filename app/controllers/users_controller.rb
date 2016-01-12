@@ -36,14 +36,14 @@ class UsersController < ApplicationController
 
   def change_password
     @user = current_user
-      if @user.valid_password?(params[:user][:current_password]) && @user.update_attributes(user_params)
-        UserSession.create(username: @user.username, password: params[:user][:password])
-        flash[:notice] = change_password_notice
-        redirect_to user_path(@user)
-      else
-        flash.now[:error] = change_password_error if change_password_error
-        render :edit
-      end
+    if @user.valid_password?(params[:user][:current_password]) && @user.update(user_params)
+      UserSession.create(username: @user.username, password: @user.password)
+      flash[:notice] = change_password_notice
+      redirect_to user_path(@user)
+    else
+      flash.now[:error] = change_password_error if change_password_error
+      render :edit
+    end
   end
 
   private

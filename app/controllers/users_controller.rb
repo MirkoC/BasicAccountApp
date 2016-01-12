@@ -41,7 +41,7 @@ class UsersController < ApplicationController
         flash[:notice] = change_password_notice
         redirect_to user_path(@user)
       else
-        flash[:error] = change_password_error
+        flash.now[:error] = change_password_error if change_password_error
         render :edit
       end
   end

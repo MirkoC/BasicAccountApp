@@ -1,16 +1,16 @@
 <div class="col-sm-3 center-block text-center">
   <%= form_for @user, url: {controller: 'users', action: 'change_password'}, method: :put do |f| %>
+      <h4>Change password</h4>
       <% if @user.errors.any? %>
-          <div class="alert alert-danger">
+          <div class="alert alert-danger" id="flash">
             <b><%= pluralize(@user.errors.count, 'error') %> prohibited this user from being saved:</b>
-            <ul>
+            <ul class="center">
               <% @user.errors.full_messages.each do |msg| %>
                   <li><%= msg %></li>
               <% end %>
             </ul>
           </div>
       <% end %>
-      <h4>Change password</h4>
       <div class="form-group">
         <%= f.password_field :current_password, class: 'form-control', placeholder: 'Current password' %>
       </div>

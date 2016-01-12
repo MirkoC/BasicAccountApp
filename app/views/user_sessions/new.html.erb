@@ -1,9 +1,9 @@
 <div class="col-sm-6 center-block">
   <%= form_for @user_session, url: user_sessions_path, method: :post do |f| %>
       <% if @user_session.errors.any? %>
-          <div class="alert alert-danger">
+          <div class="alert alert-danger text-center" id="flash">
             <b><%= pluralize(@user_session.errors.count, 'error') %> prohibited this user from being saved:</b>
-            <ul>
+            <ul class="center">
               <% @user_session.errors.full_messages.each do |msg| %>
                   <li><%= msg %></li>
               <% end %>

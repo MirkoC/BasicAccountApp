@@ -23,4 +23,11 @@ class ApplicationController < ActionController::Base
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation, :full_name)
   end
+
+  private
+
+  def load_user_using_perishable_token
+    @user = User.find_using_perishable_token(params[:format] || params[:id])
+    flash[:notice] = 'Unable to find your account.' unless @user
+  end
 end

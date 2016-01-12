@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
     SendWelcomeEmailJob.perform_later(self.id)
   end
 
+  def deliver_password_reset_instructions!
+    reset_perishable_token!
+    SendPasswordResetMailJob.perform_later(self.id)
+  end
+
   def deliver_verification_instructions!
     reset_perishable_token!
     SendVerificationInstructionsJob.perform_later(self.id)

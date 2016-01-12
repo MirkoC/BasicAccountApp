@@ -1,0 +1,23 @@
+
+<div class="col-xs-12">
+
+  <h1>Reset Password</h1>
+
+
+  <% if flash[:error] %>
+      <div class="alert alert-danger"><%= flash[:error]%></div>
+  <% end %>
+  <% if flash[:notice] %>
+      <div class="alert alert-info"><%= flash[:notice]%></div>
+  <% end %>
+
+</div>
+
+
+
+<%= form_tag password_resets_path do %>
+    <div class="form-group col-xs-3">
+      <%= text_field_tag :email, '', maxlength: '', size: '', class: 'form-control', placeholder: 'Email or username' %>
+    </div>
+    <%= submit_tag 'Reset Password', class: 'btn btn-primary' %>
+<% end %>

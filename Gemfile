@@ -1,8 +1,14 @@
 source 'https://rubygems.org'
 
 
-# testing - rspec
+# testing
 group :development, :test do
+  # Browser Testing
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
+  # rspec and factory girl
+  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
 end
 # heroku

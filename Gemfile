@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+
+# testing - rspec
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
 # heroku
 gem 'rails_12factor', group: :production
 # puma server
